@@ -1,0 +1,152 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    border: 5px solid #2980b9;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 40px rgba(134, 124, 124, 0.6);
+}
+
+.options {
+    margin-bottom: 20px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cell:hover {
+    background-color: #2980b9;
+    color: #fff;
+}
+
+.cell.X {
+    color: #2d5c7b;
+}
+
+.cell.O {
+    color: #2f4757;
+}
+
+.status {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #17262f;
+}
+
+.restart-btn {
+    font-size: 15px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #2477af;
+    color:antiquewhite;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.restart-btn:hover {
+    background-color: #3498db;
+}
+
+@keyframes drawLine {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+
+/* Your existing CSS styles remain unchanged */
+
+.cellAnimation {
+    animation: pulse 0.5s ease infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+#winnerGifContainer {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 480px) {
+    .board {
+        grid-template-columns: repeat(3, 60px);
+        /* Adjust cell width for smaller screens */
+    }
+
+    .cell {
+        width: 60px;
+        /* Adjust cell width for smaller screens */
+        height: 60px;
+        /* Adjust cell height for smaller screens */
+        font-size: 18px;
+        /* Adjust font size for smaller screens */
+    }
+}
+#friendBtn{
+    background-color: #5ca0cd;
+    padding: 10px 20px;
+    cursor: pointer;
+   color: #17262f;
+    border: none;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+#computerBtn{
+    background-color: #5ca0cd;
+    padding: 10px 20px;
+    cursor: pointer;
+   color: #17262f;
+    border: none;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
